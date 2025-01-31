@@ -1,0 +1,135 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define max 5
+class Queue {
+    int arr[max];
+    int i,j;
+
+public : 
+    Queue() {i=-1;j=-1;}
+    void push(int val);
+    void pop();
+    int front();
+    int back();
+};
+void Queue::push(int val){
+    if(i==-1 && j==-1) {
+        i++;
+        j++;
+        arr[i] = val;
+    }
+    else {
+        if((j+1)%max==i){
+            cout<<"Stack Full\n";
+        }
+        else {
+            j = (j+1)%max;
+            arr[j] = val;
+        }
+    }
+    return;
+    
+}
+void Queue::pop(){
+    if(i==-1 && j==-1){
+        cout<<"Queue is Empty\n";
+    }
+    else if(i==j){
+        i=-1;
+        j=-1;
+    }
+    else{
+        i = (i+1)%max;
+    }
+    return;
+}
+int Queue::front(){
+    if(i==-1){
+        cout<<"Queue is Empty\n";
+        return -1;
+    }
+    else return arr[i];
+}
+int Queue::back(){
+    if(j==-1){
+        cout<<"Queue is Empty\n";
+        return -1;
+    }
+    else return arr[j];
+}
+
+int main(){
+    Queue q;
+    q.push(6);
+    cout<<q.front()<<endl;
+    q.pop();
+    cout<<q.back()<<endl;
+   
+return 0;
+}
+
+#include <iostream>
+using namespace std;
+
+#define MAX 100
+
+class Stack {
+    int arr[MAX];
+    int idx;
+
+public:
+    Stack() { idx = -1; }
+    void push(int item);
+    int pop();
+    int top();
+    bool isFull();
+    bool isEmpty();
+};
+
+void Stack::push(int item) {
+    if (isFull()) {
+        cout << "Stack overflow!" << endl;
+        return;
+    }
+    arr[++idx] = item;
+}
+
+int Stack::pop() {
+    if (isEmpty()) {
+        cout << "Stack underflow!" << endl;
+        return -1;
+    }
+    return arr[idx--];
+}
+
+int Stack::top() {
+    if (isEmpty()) {
+        cout << "Stack is empty!" << endl;
+        return -1;
+    }
+    return arr[idx];
+}
+
+bool Stack::isFull() {
+    if(idx == MAX-1) return true;
+    else return false;
+}
+
+bool Stack::isEmpty() {
+    if(idx == -1) return true;
+    else return false;
+}
+
+int main() {
+    Stack stack;
+    stack.push(1);
+    stack.push(2);
+    stack.push(3);
+
+    cout << "Popped element is " << stack.pop() << endl; // Output: 3
+    cout << "idx element is " << stack.top() << endl;   // Output: 2
+    cout << "Is stack empty? " << stack.isEmpty() << endl; // Output: False
+    cout << "Is stack full? " << stack.isFull() << endl;   // Output: False
+
+    return 0;
+}
