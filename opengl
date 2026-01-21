@@ -1,0 +1,87 @@
+#include /glut. // Include the GLUT header for OpenGL
+
+void init()(
+
+giclearColor(1.0, 0.0, 0.0, 1.0);
+
+// Set background color to black
+
+glMatrixMode (GL PROJECTION).
+
+// Set the projection matrix
+
+//glLoadIdentity():
+
+gluortho20(0.0, 500.0.0.0, 500.0);
+
+// Define a 2D orthographic projection
+
+// Display function to render the point
+
+void display() {
+
+glClear(GL COLOR BUFFER_BIT);
+
+// Clear the screen
+
+glColor3f(1.0, 1.0, 0.0);
+
+// Set the point color to red
+
+glPointSize(10.0);
+
+// Set the point size to 10 pixels
+
+glBegin(GL POINTS),
+
+// Begin drawing points
+
+glVertex21 (50, 100);
+
+// Draw a point at (50, 100)
+
+glVertex21 (75, 150);
+
+glVertex21 (100, 200),
+
+glend();
+
+// Ensure everything is rendered
+
+glFlush();
+
+int main(int argc, char* argv) {
+
+glutInit(&argc, argv):
+
+glutInitDisplayMode (GLUT SINGLE GLUT RGB);
+
+glutInitWindowSize(S00, 500):
+
+glutCreateWindow("Gras Point Example")
+
+inst();
+
+glutDisplayFund (display):
+
+glutMainLoop():
+
+return
+
+// Initialize GLUT
+
+// Set display mode
+
+// Set the window size
+
+// Create a window
+
+// Call the initialization function
+
+// Register the display function
+
+// Enter the main event loop
+
+vivo Y400G
+
+Mangaluru Karnataka Jan 21, 2026, 08:53
